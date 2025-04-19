@@ -90,8 +90,11 @@ source ~/.bashrc
 ```bash
 apt update && apt install -y sudo
 ```
-
-2. **Run the swarm**
+2. **SCREEN** 
+```bash
+screen -S gensyn
+```
+3. **Run the swarm**
 ```bash
 cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn.sh && ./gensyn/gensyn.sh
 ```
