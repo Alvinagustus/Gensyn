@@ -93,5 +93,5 @@ apt update && apt install -y sudo
 
 2. **Run the swarm**
 ```bash
-cd $HOME && rm -rf gensyn-testnet && git clone https://github.com/Alvinagustus/Gensyn.git && chmod +x Gensyn/gensyn.sh && ./Gensyn/gensyn.sh
+cd $HOME && rm -rf gensyn && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn.sh && ./gensyn/gensyn.sh
 ```
