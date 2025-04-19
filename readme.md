@@ -90,7 +90,7 @@ source ~/.bashrc
 ```bash
 apt update && apt install -y sudo
 ```
-2. **SCREEN** 
+2. **SCREEN KALO BELOM SCREEN, KALO UDAH LANGSUNG AJA LANJUT SCREEN SEBELUMNYA** 
 ```bash
 screen -S gensyn
 ```
