@@ -29,7 +29,7 @@ if [ -f "$SWARM_DIR/swarm.pem" ]; then
             rm -rf "$SWARM_DIR"
 
             echo -e "${BOLD}${YELLOW}[✓] Cloning fresh repository...${NC}"
-            cd $HOME && https://github.com/Alvinagustus/rl-swarm.git > /dev/null 2>&1
+            cd $HOME && git clone https://github.com/Alvinagustus/rl-swarm.git > /dev/null 2>&1
 
             mv "$HOME_DIR/swarm.pem" rl-swarm/
             mv "$HOME_DIR/userData.json" rl-swarm/modal-login/temp-data/ 2>/dev/null
