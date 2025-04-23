@@ -57,6 +57,7 @@ if [ -n "$VIRTUAL_ENV" ]; then
 fi
 
 echo -e "${BOLD}${YELLOW}[✓] Setting up Python virtual environment...${NC}"
+chmod +x ./run_rl_swarm_ngrok.sh
 python3 -m venv .venv
 source .venv/bin/activate
 
