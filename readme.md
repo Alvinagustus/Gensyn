@@ -94,7 +94,7 @@ apt update && apt install -y sudo
 ```bash
 screen -S gensyn
 ```
-3. **Run the swarm PILIH CLOUDFLARED DULU NGROK BELUM FIXED**
+3. **Run the swarm PILIH NGROK kalo Cloudflared error**
 ```bash
 cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn.sh && ./gensyn/gensyn.sh
 ```
