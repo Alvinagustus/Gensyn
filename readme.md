@@ -94,7 +94,7 @@ apt update && apt install -y sudo
 ```bash
 screen -S gensyn
 ```
-3. **Run the swarm PILIH NGROK kalo Cloudflared error**
+3. **Run the swarm PILIH NGROK kalo Cloudflared error** (Kalo udah ada Swarm.pem dan login alias cuma mau update use existing swarm.pem dan pilih Cloudflared.. Kalo run baru pilih ngrok atau Cloudflared bebas)
 ```bash
 cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn.sh && ./gensyn/gensyn.sh
 ```
