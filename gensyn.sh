@@ -60,5 +60,16 @@ echo -e "${BOLD}${YELLOW}[✓] Setting up Python virtual environment...${NC}"
 python3 -m venv .venv
 source .venv/bin/activate
 
-echo -e "${BOLD}${YELLOW}[✓] Running rl-swarm...${NC}"
-./run_rl_swarm.sh
+echo -e "${BOLD}${YELLOW}[?] Mau jalanin dengan apa? (1: cloudflared, 2: ngrok)${NC}"
+read -p "Pilih (1/2): " pilihan
+
+if [ "$pilihan" == "1" ]; then
+    echo -e "${BOLD}${YELLOW}[✓] Menjalankan dengan cloudflared...${NC}"
+    ./run_rl_swarm.sh
+elif [ "$pilihan" == "2" ]; then
+    echo -e "${BOLD}${YELLOW}[✓] Menjalankan dengan ngrok...${NC}"
+    ./run_rl_swarm_ngrok.sh
+else
+    echo -e "${BOLD}${RED}[!] Pilihan tidak valid. Keluar.${NC}"
+    exit 1
+fi
