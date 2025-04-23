@@ -59,7 +59,7 @@ fi
 echo -e "${BOLD}${YELLOW}[✓] Setting up Python virtual environment...${NC}"
 chmod +x ./run_rl_swarm_ngrok.sh
 
-echo -e "${BOLD}${YELLOW}[?] Mau jalanin dengan apa? (1: cloudflared, 2: ngrok)${NC}"
+echo -e "${BOLD}${YELLOW}[?] Mau jalanin dengan apa? Kalo udah ada swarm.pem dan loginnya dan cuma mau update ketik 1 (1: cloudflared, 2: ngrok)${NC}"
 read -p "Pilih (1/2): " pilihan
 
 if [ "$pilihan" == "1" ]; then
