@@ -46,7 +46,7 @@ if [ -f "$SWARM_DIR/swarm.pem" ]; then
     done
 else
     echo -e "${BOLD}${YELLOW}[✓] No existing swarm.pem found. Cloning repository...${NC}"
-    cd $HOME && [ -d rl-swarm-reward ] && rm -rf rl-swarm; git clone https://github.com/Alvinagustus/rl-swarm-reward.git > /dev/null 2>&1
+    cd $HOME && [ -d rl-swarm-reward ] && rm -rf rl-swarm-reward; git clone https://github.com/Alvinagustus/rl-swarm-reward.git > /dev/null 2>&1
 fi
 
 cd rl-swarm-reward || { echo -e "${BOLD}${RED}[✗] Failed to enter rl-swarm-reward directory. Exiting.${NC}"; exit 1; }
