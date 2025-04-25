@@ -49,7 +49,7 @@ else
     cd $HOME && [ -d rl-swarm-reward ] && rm -rf rl-swarm; git clone https://github.com/Alvinagustus/rl-swarm-reward.git > /dev/null 2>&1
 fi
 
-cd rl-swarm || { echo -e "${BOLD}${RED}[✗] Failed to enter rl-swarm-reward directory. Exiting.${NC}"; exit 1; }
+cd rl-swarm-reward || { echo -e "${BOLD}${RED}[✗] Failed to enter rl-swarm-reward directory. Exiting.${NC}"; exit 1; }
 
 if [ -n "$VIRTUAL_ENV" ]; then
     echo -e "${BOLD}${YELLOW}[✓] Deactivating existing virtual environment...${NC}"
