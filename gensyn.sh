@@ -62,15 +62,23 @@ chmod +x ./run_rl_swarm_ngrok.sh
 echo -e "${BOLD}${YELLOW}[?] Mau jalanin dengan apa? Kalo udah ada swarm.pem dan loginnya dan cuma mau update ketik 1 (1: cloudflared, 2: ngrok)${NC}"
 read -p "Pilih (1/2): " pilihan
 
-if [ "$pilihan" == "1" ]; then
+if [[ "$pilihan" == "1" ]]; then
     echo -e "${BOLD}${YELLOW}[✓] Menjalankan dengan cloudflared...${NC}"
-    python3 -m venv .venv
+    if [ ! -d ".venv" ]; then
+        echo -e "${BOLD}${YELLOW}[✓] Buat .venv dulu ya gaes ya${NC}"
+        python3 -m venv .venv
+    fi
     source .venv/bin/activate
+    echo -e "${BOLD}${YELLOW}[✓] Running RL-SWARM${NC}"
     ./run_rl_swarm.sh
-elif [ "$pilihan" == "2" ]; then
+elif [[ "$pilihan" == "2" ]]; then
     echo -e "${BOLD}${YELLOW}[✓] Menjalankan dengan ngrok...${NC}"
-    python3 -m venv .venv
+    if [ ! -d ".venv" ]; then
+        echo -e "${BOLD}${YELLOW}[✓] Buat .venv dulu ya gaes ya${NC}"
+        python3 -m venv .venv
+    fi
     source .venv/bin/activate
+    echo -e "${BOLD}${YELLOW}[✓] Running RL-SWARM${NC}"
     ./run_rl_swarm_ngrok.sh
 else
     echo -e "${BOLD}${RED}[!] Pilihan tidak valid. Keluar.${NC}"
