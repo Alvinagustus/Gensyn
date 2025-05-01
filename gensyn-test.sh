@@ -6,7 +6,7 @@ GREEN="\e[32m"
 YELLOW="\e[33m"
 NC="\e[0m"
 
-SWARM_DIR="$HOME/rl-swarm-reward"
+SWARM_DIR="$HOME/rl-swarm-test"
 TEMP_DATA_PATH="$SWARM_DIR/modal-login/temp-data"
 HOME_DIR="$HOME"
 
@@ -29,16 +29,16 @@ if [ -f "$SWARM_DIR/swarm.pem" ]; then
             rm -rf "$SWARM_DIR"
 
             echo -e "${BOLD}${YELLOW}[✓] Cloning fresh repository...${NC}"
-            cd $HOME && git clone https://github.com/Alvinagustus/rl-swarm-reward.git > /dev/null 2>&1
+            cd $HOME && git clone https://github.com/Alvinagustus/rl-swarm-test.git > /dev/null 2>&1
 
-            mv "$HOME_DIR/swarm.pem" rl-swarm-reward/
-            mv "$HOME_DIR/userData.json" rl-swarm-reward/modal-login/temp-data/ 2>/dev/null
-            mv "$HOME_DIR/userApiKey.json" rl-swarm-reward/modal-login/temp-data/ 2>/dev/null
+            mv "$HOME_DIR/swarm.pem" rl-swarm-test/
+            mv "$HOME_DIR/userData.json" rl-swarm-test/modal-login/temp-data/ 2>/dev/null
+            mv "$HOME_DIR/userApiKey.json" rl-swarm-test/modal-login/temp-data/ 2>/dev/null
             break
         elif [ "$choice" == "2" ]; then
             echo -e "${BOLD}${YELLOW}[✓] Removing existing folder and starting fresh...${NC}"
             rm -rf "$SWARM_DIR"
-            cd $HOME && git clone https://github.com/Alvinagustus/rl-swarm-reward.git > /dev/null 2>&1
+            cd $HOME && git clone https://github.com/Alvinagustus/rl-swarm-test.git > /dev/null 2>&1
             break
         else
             echo -e "\n${BOLD}${RED}[✗] Invalid choice. Please enter 1 or 2.${NC}"
@@ -46,10 +46,10 @@ if [ -f "$SWARM_DIR/swarm.pem" ]; then
     done
 else
     echo -e "${BOLD}${YELLOW}[✓] No existing swarm.pem found. Cloning repository...${NC}"
-    cd $HOME && [ -d rl-swarm-reward ] && rm -rf rl-swarm-reward; git clone https://github.com/Alvinagustus/rl-swarm-reward.git > /dev/null 2>&1
+    cd $HOME && [ -d rl-swarm-test ] && rm -rf rl-swarm-test; git clone https://github.com/Alvinagustus/rl-swarm-test.git > /dev/null 2>&1
 fi
 
-cd rl-swarm-reward || { echo -e "${BOLD}${RED}[✗] Failed to enter rl-swarm-reward directory. Exiting.${NC}"; exit 1; }
+cd rl-swarm-test || { echo -e "${BOLD}${RED}[✗] Failed to enter rl-swarm-reward directory. Exiting.${NC}"; exit 1; }
 
 if [ -n "$VIRTUAL_ENV" ]; then
     echo -e "${BOLD}${YELLOW}[✓] Deactivating existing virtual environment...${NC}"
