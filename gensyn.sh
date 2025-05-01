@@ -64,20 +64,10 @@ read -p "Pilih (1/2): " pilihan
 
 if [[ "$pilihan" == "1" ]]; then
     echo -e "${BOLD}${YELLOW}[✓] Menjalankan dengan cloudflared...${NC}"
-    if [ ! -d ".venv" ]; then
-        echo -e "${BOLD}${YELLOW}[✓] Buat .venv dulu ya gaes ya${NC}"
-        python3 -m venv .venv
-    fi
-    source .venv/bin/activate
     echo -e "${BOLD}${YELLOW}[✓] Running RL-SWARM${NC}"
     ./run_rl_swarm.sh
 elif [[ "$pilihan" == "2" ]]; then
     echo -e "${BOLD}${YELLOW}[✓] Menjalankan dengan ngrok...${NC}"
-    if [ ! -d ".venv" ]; then
-        echo -e "${BOLD}${YELLOW}[✓] Buat .venv dulu ya gaes ya${NC}"
-        python3 -m venv .venv
-    fi
-    source .venv/bin/activate
     echo -e "${BOLD}${YELLOW}[✓] Running RL-SWARM${NC}"
     ./run_rl_swarm_ngrok.sh
 else
