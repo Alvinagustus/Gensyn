@@ -102,3 +102,7 @@ cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gen
 ```bash
 cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn-test.sh && ./gensyn/gensyn-test.sh
 ```
+3. CPU
+```bash
+cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn-cpu.sh && ./gensyn/gensyn-cpu.sh
+```
