@@ -98,7 +98,7 @@ screen -S gensyn
 ```bash
 cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn.sh && ./gensyn/gensyn.sh
 ```
-3. **Run the swarm REWARDS (UNTESTED DO IT AT YOUR OWN RISK)** (Kalo udah ada Swarm.pem dan login alias cuma mau update use existing swarm.pem dan pilih Cloudflared.. Kalo run baru pilih ngrok atau Cloudflared bebas)
+3. TIDAK DIREKOMENDASIKAN RUN INI SUDAH TIDAK SAYA UPDATE LAGI SOALNYA HOAX REWARD TETEP GA NAMBAH **Run the swarm REWARDS (UNTESTED DO IT AT YOUR OWN RISK)** (Kalo udah ada Swarm.pem dan login alias cuma mau update use existing swarm.pem dan pilih Cloudflared.. Kalo run baru pilih ngrok atau Cloudflared bebas)
 ```bash
 cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn-reward.sh && ./gensyn/gensyn-reward.sh
 ```
