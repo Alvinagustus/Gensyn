@@ -52,15 +52,18 @@ fi
 cd rl-swarm || { echo -e "${BOLD}${RED}[✗] Failed to enter rl-swarm directory. Exiting.${NC}"; exit 1; }
 
 if [ -n "$VIRTUAL_ENV" ]; then
-    echo -e "${BOLD}${YELLOW}[✓] Deactivating existing virtual environment...${NC}"
-    deactivate
+    echo -e "\n${CYAN}${BOLD}[✓] Deactivating existing virtual environment...${NC}"
+    deactivate && rm -rf .venv
 fi
 
-echo -e "${BOLD}${YELLOW}[✓] Setting up Python virtual environment...${NC}"
-chmod +x ./run_rl_swarm_ngrok.sh
+echo -e "${CYAN}${BOLD}[✓] Setting up Python virtual environment...${NC}"
+python3 -m venv .venv && source .venv/bin/activate && \
+echo -e "${GREEN}${BOLD}[✓] Python virtual environment set up successfully.${NC}" || \
+echo -e "${RED}${BOLD}[✗] Failed to set up virtual environment.${NC}"
 
 echo -e "${BOLD}${YELLOW}[?] Mau jalanin dengan apa? Kalo udah ada swarm.pem dan loginnya dan cuma mau update ketik 1 (1: cloudflared, 2: ngrok)${NC}"
 read -p "Pilih (1/2): " pilihan
+
 
 if [[ "$pilihan" == "1" ]]; then
     echo -e "${BOLD}${YELLOW}[✓] Menjalankan dengan cloudflared...${NC}"
