@@ -94,15 +94,15 @@ apt update && apt install -y sudo
 ```bash
 screen -S gensyn
 ```
-3. **Run the swarm PILIH NGROK kalo Cloudflared error** (Kalo udah ada Swarm.pem dan login alias cuma mau update use existing swarm.pem dan pilih Cloudflared.. Kalo run baru pilih ngrok atau Cloudflared bebas)
+3. ***RUN PAKE GPU INI COMMANDNYA***
 ```bash
 cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn.sh && ./gensyn/gensyn.sh
 ```
-3. TIDAK DIREKOMENDASIKAN RUN INI SUDAH TIDAK SAYA UPDATE LAGI SOALNYA HOAX REWARD TETEP GA NAMBAH **Run the swarm REWARDS (UNTESTED DO IT AT YOUR OWN RISK)** (Kalo udah ada Swarm.pem dan login alias cuma mau update use existing swarm.pem dan pilih Cloudflared.. Kalo run baru pilih ngrok atau Cloudflared bebas)
+3. ***TIDAK DIREKOMENDASIKAN RUN INI HANYA UNTUK TRIAL AND ERROR SAJA***
 ```bash
 cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn-test.sh && ./gensyn/gensyn-test.sh
 ```
-3. CPU
+3. ***RUN PAKE CPU INI COMMANDNYA***
 ```bash
 cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn-cpu.sh && ./gensyn/gensyn-cpu.sh
 ```
