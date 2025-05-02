@@ -65,6 +65,8 @@ echo -e "${BOLD}${YELLOW}[?] Mau jalanin dengan apa? Kalo udah ada swarm.pem dan
 read -p "Pilih (1/2): " pilihan
 
 
+export PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0
+
 if [[ "$pilihan" == "1" ]]; then
     echo -e "${BOLD}${YELLOW}[✓] Menjalankan dengan cloudflared...${NC}"
     echo -e "${BOLD}${YELLOW}[✓] Running RL-SWARM${NC}"
