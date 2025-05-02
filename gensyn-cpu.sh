@@ -53,7 +53,7 @@ cd rl-swarm || { echo -e "${BOLD}${RED}[✗] Failed to enter rl-swarm directory.
 
 if [ -n "$VIRTUAL_ENV" ]; then
     echo -e "\n${CYAN}${BOLD}[✓] Deactivating existing virtual environment...${NC}"
-    deactivate && rm -rf .venv
+    deactivate
 fi
 
 echo -e "${CYAN}${BOLD}[✓] Setting up Python virtual environment...${NC}"
