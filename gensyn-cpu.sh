@@ -57,7 +57,9 @@ if [ -n "$VIRTUAL_ENV" ]; then
 fi
 
 echo -e "${CYAN}${BOLD}[✓] Setting up Python virtual environment...${NC}"
-python3 -m venv .venv && source .venv/bin/activate && \
+python3.10 -m venv .venv && \
+source .venv/bin/activate && \
+pip install --upgrade pip && \
 echo -e "${GREEN}${BOLD}[✓] Python virtual environment set up successfully.${NC}" || \
 echo -e "${RED}${BOLD}[✗] Failed to set up virtual environment.${NC}"
 
