@@ -56,9 +56,29 @@ if [ -n "$VIRTUAL_ENV" ]; then
     deactivate && rm -rf .venv
 fi
 
-echo -e "${CYAN}${BOLD}[✓] Setting up Python virtual environment...${NC}"
-python3 -m venv .venv && source .venv/bin/activate && python3.10 -m pip install --upgrade pip && \
-echo -e "${GREEN}${BOLD}[✓] Python virtual environment set up successfully.${NC}" || \
+echo -e "${CYAN}${BOLD}[✓] Mencoba setup virtual environment...${NC}"
+
+# Cari interpreter Python
+if command -v python3.10 &>/dev/null; then
+    PYTHON_BIN=python3.10
+elif command -v python3.12 &>/dev/null; then
+    PYTHON_BIN=python3.12
+elif command -v python3 &>/dev/null; then
+    PYTHON_BIN=python3
+else
+    echo -e "${RED}[✗] Tidak ada interpreter Python 3 yang ditemukan.${NC}"
+    exit 1
+fi
+
+# Tampilkan versi yang dipakai
+echo -e "${CYAN}${BOLD}[✓] Menggunakan $PYTHON_BIN ($( $PYTHON_BIN --version ))${NC}"
+
+# Setup venv
+$PYTHON_BIN -m venv .venv && \
+source .venv/bin/activate && \
+pip install --upgrade pip
+
+echo -e "${CYAN}${BOLD}[✓] Virtual environment berhasil disiapkan.${NC}" || \
 echo -e "${RED}${BOLD}[✗] Failed to set up virtual environment.${NC}"
 
 echo -e "${BOLD}${YELLOW}[?] Mau jalanin dengan apa? Kalo udah ada swarm.pem dan loginnya dan cuma mau update ketik 1 (1: cloudflared, 2: ngrok)${NC}"
