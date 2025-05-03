@@ -1,7 +1,7 @@
 ## Swap File if USE DO $48 -> 4/8 
 Buat file Swapfile :
 ```
-sudo fallocate -l 16G /swapfile
+sudo fallocate -l 32G /swapfile
 ```
 
 Set Perm : 
