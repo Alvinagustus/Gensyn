@@ -96,13 +96,13 @@ screen -S gensyn
 ```
 3. ***RUN PAKE GPU INI COMMANDNYA***
 ```bash
-cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn.sh && ./gensyn/gensyn.sh
+cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn.sh && source ./gensyn/gensyn.sh
 ```
 3. ***TIDAK DIREKOMENDASIKAN RUN INI HANYA UNTUK TRIAL AND ERROR SAJA***
 ```bash
-cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn-test.sh && ./gensyn/gensyn-test.sh
+cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn-test.sh && source ./gensyn/gensyn-test.sh
 ```
 3. ***RUN PAKE CPU INI COMMANDNYA***
 ```bash
-cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn-cpu.sh && ./gensyn/gensyn-cpu.sh
+cd $HOME && git clone https://github.com/Alvinagustus/gensyn.git && chmod +x gensyn/gensyn-cpu.sh && source ./gensyn/gensyn-cpu.sh
 ```
