@@ -82,6 +82,28 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 source ~/.bashrc
 ```
 
+**PENTING, KALO UDAH PERNAH RUN TOLONG SCREENNYA DIHAPUS DULU DAN RUN COMMAND DIBAWAH INI DI ROOT JANGAN DISCREEN**
+Update Python kalo belum pake 3.13 
+```bash
+curl https://pyenv.run | bash
+```
+
+```bash
+export PYENV_ROOT="$HOME/.pyenv" [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH" eval "$(pyenv init -)"
+```
+
+```bash
+source ~/.bashrc
+```
+
+```bash
+pyenv install 3.13.1
+```
+
+```bash
+pyenv global 3.13.1
+```
+
 
 
 ## 📥 Installation
