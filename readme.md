@@ -2,6 +2,7 @@
 Buat file Swapfile :
 ```
 sudo fallocate -l 32G /swapfile
+sudo dd if=/dev/zero of=/swapfile bs=1G count=32 status=progress
 ```
 
 Set Perm : 
@@ -53,33 +54,18 @@ sudo apt-get install python3 python3-pip python3-venv python3-dev -y
 
 **4. Install Node**
 ```
-sudo apt-get update
-```
-```
-curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
-```
-```
-sudo apt-get install -y nodejs
-```
-```
-node -v
-```
-```bash
-sudo npm install -g yarn
-```
-```bash
-yarn -v
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+source ~/.bashrc
+nvm install 'lts/*'
+nvm use 'lts/*'
 ```
 
 **5. Install Yarn**
 ```bash
-curl -o- -L https://yarnpkg.com/install.sh | bash
-```
-```bash
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-```
-```bash
-source ~/.bashrc
+curl -sSL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update -y
+sudo apt-get install yarn -y
 ```
 
 **🚩🚩🚩🚩PENTING KHUSUS CPU, KALO UDAH PERNAH RUN TOLONG SCREENNYA DIHAPUS DULU DAN RUN COMMAND DIBAWAH INI DI ROOT JANGAN DISCREEN**
