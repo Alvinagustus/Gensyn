@@ -155,26 +155,42 @@ check_and_guide_python_install
 # Setup venv
 echo -e "${CYAN}${BOLD}[✓] Membuat lingkungan virtual di .venv menggunakan $PYTHON_BIN...${NC}"
 if $PYTHON_BIN -m venv .venv; then
-    echo -e "${GREEN}${BOLD}[✓] Lingkungan virtual berhasil dibuat.${NC}"
-    echo -e "${CYAN}${BOLD}[✓] Mengaktifkan lingkungan virtual dan mengupgrade pip...${NC}"
-    
-    source .venv/bin/activate
-    if [ $? -ne 0 ]; then
-        echo -e "${RED}${BOLD}[✗] Gagal mengaktifkan lingkungan virtual! Periksa output di atas.${NC}"
-        exit 1
-    fi
-    
-    if pip install --upgrade pip; then
-        echo -e "${GREEN}${BOLD}[✓] Pip berhasil diupgrade.${NC}"
-        echo -e "${GREEN}${BOLD}[✓] Setup lingkungan virtual selesai.${NC}"
-    else
-        echo -e "${RED}${BOLD}[✗] Gagal mengupgrade pip! Melanjutkan dengan pip yang ada...${NC}"
-        # Anda bisa memilih untuk keluar jika upgrade pip adalah krusial:
-        # exit 1 
-    fi
+    echo -e "${GREEN}${BOLD}[✓] Lingkungan virtual berhasil dibuat.${NC}"
+    echo -e "${CYAN}${BOLD}[✓] Mengaktifkan lingkungan virtual dan mengupgrade pip...${NC}"
+    
+    source .venv/bin/activate
+    if [ $? -ne 0 ]; then
+        echo -e "${RED}${BOLD}[✗] Gagal mengaktifkan lingkungan virtual! Periksa output di atas.${NC}"
+        exit 1
+    fi
+    
+    if pip install --upgrade pip; then
+        echo -e "${GREEN}${BOLD}[✓] Pip berhasil diupgrade.${NC}"
+        echo -e "${CYAN}${BOLD}[✓] Menginstal pustaka 'datasets'...${NC}"
+        if pip install datasets; then
+            echo -e "${GREEN}${BOLD}[✓] Pustaka 'datasets' berhasil diinstal.${NC}"
+            echo -e "${GREEN}${BOLD}[✓] Setup lingkungan virtual selesai.${NC}"
+        else
+            echo -e "${RED}${BOLD}[✗] Gagal menginstal pustaka 'datasets'! Silakan periksa error di atas.${NC}"
+            # Anda bisa memilih untuk keluar jika instalasi datasets krusial:
+            # exit 1
+        fi
+    else
+        echo -e "${RED}${BOLD}[✗] Gagal mengupgrade pip! Melanjutkan dengan pip yang ada...${NC}"
+        echo -e "${CYAN}${BOLD}[✓] Mencoba menginstal 'datasets' dengan pip yang ada...${NC}"
+        if pip install datasets; then
+            echo -e "${GREEN}${BOLD}[✓] Pustaka 'datasets' berhasil diinstal.${NC}"
+        else
+            echo -e "${RED}${BOLD}[✗] Gagal menginstal pustaka 'datasets' dengan pip yang ada! Silakan periksa error di atas.${NC}"
+            # Anda bisa memilih untuk keluar jika instalasi datasets krusial:
+            # exit 1
+        fi
+        # Anda bisa memilih untuk keluar jika upgrade pip adalah krusial:
+        # exit 1 
+    fi
 else
-    echo -e "${RED}${BOLD}[✗] Gagal membuat lingkungan virtual dengan $PYTHON_BIN.${NC}"
-    exit 1
+    echo -e "${RED}${BOLD}[✗] Gagal membuat lingkungan virtual dengan $PYTHON_BIN.${NC}"
+    exit 1
 fi
 
 # --- Eksekusi Skrip Utama ---
