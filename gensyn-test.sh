@@ -41,7 +41,7 @@ check_and_guide_python_install() {
         echo -e "\n  ${BOLD}Metode 1: Menggunakan pyenv (direkomendasikan untuk Linux):${NC}"
         echo -e "    1. Instal pyenv: \`curl https://pyenv.run | bash\` (ikuti instruksi untuk PATH)"
         echo -e "    2. Instal dependensi build (contoh untuk Ubuntu/Debian):"
-        echo -e "       \`sudo apt update && sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl\`"
+        echo -e "        \`sudo apt update && sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl\`"
         echo -e "    3. Instal Python ${DESIRED_PYTHON_VERSION}: \`pyenv install ${DESIRED_PYTHON_VERSION}.x\` (ganti .x dengan versi patch terbaru)"
         echo -e "    4. Atur versi: \`pyenv global ${DESIRED_PYTHON_VERSION}.x\` atau \`cd ke_direktori_proyek && pyenv local ${DESIRED_PYTHON_VERSION}.x\`"
         echo -e "\n  ${BOLD}Metode 2: Untuk Ubuntu/Debian menggunakan PPA deadsnakes:${NC}"
@@ -103,8 +103,8 @@ if [ -d "$SWARM_DIR" ] && [ -f "$SWARM_DIR/swarm.pem" ]; then
             rm -rf "$SWARM_DIR"
             echo -e "${BOLD}${YELLOW}[✓] Mengkloning repositori baru ke $SWARM_DIR...${NC}"
             if ! git clone https://github.com/Alvinagustus/rl-swarm.git "$SWARM_DIR" > /dev/null 2>&1; then
-                 echo -e "${BOLD}${RED}[✗] Gagal mengkloning repositori. Keluar.${NC}"
-                 exit 1
+                echo -e "${BOLD}${RED}[✗] Gagal mengkloning repositori. Keluar.${NC}"
+                exit 1
             fi
             echo -e "${GREEN}${BOLD}[✓] Repositori berhasil dikloning.${NC}"
             break
@@ -155,17 +155,19 @@ check_and_guide_python_install
 # Setup venv
 echo -e "${CYAN}${BOLD}[✓] Membuat lingkungan virtual di .venv menggunakan $PYTHON_BIN...${NC}"
 if $PYTHON_BIN -m venv .venv; then
-    echo -e "${GREEN}${BOLD}[✓] Lingkungan virtual berhasil dibuat.${NC}"
-    echo -e "${CYAN}${BOLD}[✓] Mengaktifkan lingkungan virtual dan mengupgrade pip...${NC}"
-    
-    source .venv/bin/activate
-    if [ $? -ne 0 ]; then
-        echo -e "${RED}${BOLD}[✗] Gagal mengaktifkan lingkungan virtual! Periksa output di atas.${NC}"
-        exit 1
-    fi
-    
-    if pip install --upgrade pip; then
-        echo -e "${GREEN}${BOLD}[✓] Pip berhasil diupgrade.${NC}"
+    echo -e "${GREEN}${BOLD}[✓] Lingkungan virtual berhasil dibuat.${NC}"
+    echo -e "${CYAN}${BOLD}[✓] Mengaktifkan lingkungan virtual dan mengupgrade pip...${NC}"
+    
+    # Pastikan baris ini bersih dan menggunakan spasi standar
+    source .venv/bin/activate
+    if [ $? -ne 0 ]; then # Pastikan baris ini bersih
+        echo -e "${RED}${BOLD}[✗] Gagal mengaktifkan lingkungan virtual! Periksa output di atas.${NC}"
+        exit 1
+    fi
+    
+    # Pastikan baris ini bersih dan menggunakan spasi standar
+    if pip install --upgrade pip; then
+        echo -e "${GREEN}${BOLD}[✓] Pip berhasil diupgrade.${NC}"
         echo -e "${CYAN}${BOLD}[✓] Menginstal pustaka 'datasets'...${NC}"
         if pip install datasets; then
             echo -e "${GREEN}${BOLD}[✓] Pustaka 'datasets' berhasil diinstal.${NC}"
@@ -175,8 +177,8 @@ if $PYTHON_BIN -m venv .venv; then
             # Anda bisa memilih untuk keluar jika instalasi datasets krusial:
             # exit 1
         fi
-    else
-        echo -e "${RED}${BOLD}[✗] Gagal mengupgrade pip! Melanjutkan dengan pip yang ada...${NC}"
+    else
+        echo -e "${RED}${BOLD}[✗] Gagal mengupgrade pip! Melanjutkan dengan pip yang ada...${NC}"
         echo -e "${CYAN}${BOLD}[✓] Mencoba menginstal 'datasets' dengan pip yang ada...${NC}"
         if pip install datasets; then
             echo -e "${GREEN}${BOLD}[✓] Pustaka 'datasets' berhasil diinstal.${NC}"
@@ -185,12 +187,12 @@ if $PYTHON_BIN -m venv .venv; then
             # Anda bisa memilih untuk keluar jika instalasi datasets krusial:
             # exit 1
         fi
-        # Anda bisa memilih untuk keluar jika upgrade pip adalah krusial:
-        # exit 1 
-    fi
+        # Anda bisa memilih untuk keluar jika upgrade pip adalah krusial:
+        # exit 1 
+    fi
 else
-    echo -e "${RED}${BOLD}[✗] Gagal membuat lingkungan virtual dengan $PYTHON_BIN.${NC}"
-    exit 1
+    echo -e "${RED}${BOLD}[✗] Gagal membuat lingkungan virtual dengan $PYTHON_BIN.${NC}"
+    exit 1
 fi
 
 # --- Eksekusi Skrip Utama ---
