@@ -90,7 +90,9 @@ curl https://pyenv.run | bash
 
 ***INI BEDA TIAP VPS MASUKIN DARI OUTPUTNYA AJA YANG MIRIP DIBAWAH INI***
 ```bash
-export PYENV_ROOT="$HOME/.pyenv" [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH" eval "$(pyenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - bash)"
 ```
 
 ```bash
