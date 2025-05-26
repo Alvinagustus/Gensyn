@@ -82,7 +82,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 source ~/.bashrc
 ```
 
-**PENTING, KALO UDAH PERNAH RUN TOLONG SCREENNYA DIHAPUS DULU DAN RUN COMMAND DIBAWAH INI DI ROOT JANGAN DISCREEN**
+**🚩🚩🚩🚩PENTING KHUSUS CPU, KALO UDAH PERNAH RUN TOLONG SCREENNYA DIHAPUS DULU DAN RUN COMMAND DIBAWAH INI DI ROOT JANGAN DISCREEN**
 Update Python kalo belum pake 3.13 
 ```bash
 curl https://pyenv.run | bash
@@ -97,12 +97,18 @@ source ~/.bashrc
 ```
 
 ```bash
+sudo apt-get install libssl-dev libncurses5-dev libsqlite3-dev libreadline-dev tk-dev libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev uuid-dev
+```
+
+```bash
 pyenv install 3.13.1
 ```
 
 ```bash
 pyenv global 3.13.1
 ```
+
+
 
 
 
