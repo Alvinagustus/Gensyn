@@ -53,7 +53,7 @@ cd rl-swarm || { echo -e "${BOLD}${RED}[✗] Failed to enter rl-swarm directory.
 
 if [ -n "$VIRTUAL_ENV" ]; then
     echo -e "\n${CYAN}${BOLD}[✓] Deactivating existing virtual environment...${NC}"
-    deactivate && rm -rf .venv
+    deactivate
 fi
 
 echo -e "${CYAN}${BOLD}[✓] Mencoba setup virtual environment...${NC}"
@@ -83,6 +83,7 @@ echo -e "${RED}${BOLD}[✗] Failed to set up virtual environment.${NC}"
 
 echo -e "${BOLD}${YELLOW}[?] Mau jalanin dengan apa? Kalo udah ada swarm.pem dan loginnya dan cuma mau update ketik 1 (1: cloudflared, 2: ngrok)${NC}"
 read -p "Pilih (1/2): " pilihan
+
 
 if [[ "$pilihan" == "1" ]]; then
     echo -e "${BOLD}${YELLOW}[✓] Menjalankan dengan cloudflared...${NC}"
