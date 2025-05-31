@@ -86,6 +86,7 @@ read -p "Pilih (1/2): " pilihan
 
 
 export PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0
+export WANDB_MODE=disable
 
 if [[ "$pilihan" == "1" ]]; then
     echo -e "${BOLD}${YELLOW}[✓] Menjalankan dengan cloudflared...${NC}"
